@@ -1,10 +1,11 @@
 // Selectors
 const funBusH1 = document.querySelector('.logo-heading');
 const theBody = document.querySelector('body');
+const theHTML = document.querySelector('html');
 const img = document.querySelectorAll('img');
 const buttons = document.querySelectorAll('.destination .btn');
 const anchors = document.querySelectorAll('nav a');
-
+const pTag = document.querySelectorAll('p');
 
 funBusH1.addEventListener('mouseover', () => {
   funBusH1.style.fontSize = '5.7rem';
@@ -55,7 +56,27 @@ theBody.addEventListener('load', () => {
 });
 
 for (let i = 0; i < anchors.length; i++) {
-  anchors[i].addEventListener('focus', (redColor) => {
-    redColor.target.style.color = 'red';
+  anchors[i].addEventListener('focus', (lightgrayColor) => {
+    lightgrayColor.target.style.background = 'lightgray';
+  });
+};
+
+theHTML.addEventListener('resize', () => {
+  console.log(`${window.innerHeight} + ${window.innerWidth}`)
+});
+
+for (let i = 0; i < pTag.length; i++) {
+  pTag[i].addEventListener('mousemove', () => {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    const pColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+    pTag[i].style.color = pColor;
+  });
+};
+
+for (let i = 0; i < img.length; i++) {
+  img[i].addEventListener('dblclick', () => {
+    img[i].style.display = 'none';
   });
 };
