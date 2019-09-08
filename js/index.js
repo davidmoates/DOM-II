@@ -5,6 +5,7 @@ const theHTML = document.querySelector('html');
 const img = document.querySelectorAll('img');
 const buttons = document.querySelectorAll('.destination .btn');
 const anchors = document.querySelectorAll('nav a');
+const h2And4Tag = document.querySelectorAll('h2, h4');
 const pTag = document.querySelectorAll('p');
 
 funBusH1.addEventListener('mouseover', () => {
@@ -65,15 +66,26 @@ theHTML.addEventListener('resize', () => {
   console.log(`${window.innerHeight} + ${window.innerWidth}`)
 });
 
-for (let i = 0; i < pTag.length; i++) {
-  pTag[i].addEventListener('mousemove', () => {
+for (let i = 0; i < h2And4Tag.length; i++) {
+  h2And4Tag[i].addEventListener('mousemove', () => {
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
     const pColor = 'rgb(' + r + ',' + g + ',' + b + ')';
-    pTag[i].style.color = pColor;
+    h2And4Tag[i].style.color = pColor;
   });
 };
+
+
+for (let i = 0; i < pTag.length; i++) {
+  pTag[i].addEventListener('select', (highlight) => {
+    document.getElementsByTagName("p")[i].setAttribute("class", "log");
+    const log = document.getElementById('log');
+    const selection = highlight.target.value.substring(highlight.target.selectionStart, highlight.target.selectionEnd);
+    console.log(`${log.textContent = `${selection}`}`)
+  });
+};
+
 
 for (let i = 0; i < img.length; i++) {
   img[i].addEventListener('dblclick', () => {
