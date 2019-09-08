@@ -2,7 +2,8 @@
 const funBusH1 = document.querySelector('.logo-heading');
 const theBody = document.querySelector('body');
 const img = document.querySelectorAll('img');
-const buttons = document.querySelectorAll('.destination .btn')
+const buttons = document.querySelectorAll('.destination .btn');
+
 
 funBusH1.addEventListener('mouseover', () => {
   funBusH1.style.fontSize = '5.7rem';
@@ -47,3 +48,7 @@ for (let i = 0; i < buttons.length; i++) {
     buttons[i].style.color = textColor;
   });
 };
+
+theBody.addEventListener('load', () => {
+  console.log('page is loaded');
+});
