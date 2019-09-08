@@ -3,6 +3,7 @@ const funBusH1 = document.querySelector('.logo-heading');
 const theBody = document.querySelector('body');
 const img = document.querySelectorAll('img');
 const buttons = document.querySelectorAll('.destination .btn');
+const anchors = document.querySelectorAll('nav a');
 
 
 funBusH1.addEventListener('mouseover', () => {
@@ -52,3 +53,9 @@ for (let i = 0; i < buttons.length; i++) {
 theBody.addEventListener('load', () => {
   console.log('page is loaded');
 });
+
+for (let i = 0; i < anchors.length; i++) {
+  anchors[i].addEventListener('focus', (redColor) => {
+    redColor.target.style.color = 'red';
+  });
+};
