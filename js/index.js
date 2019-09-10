@@ -1,6 +1,6 @@
 // Selectors
 const funBusH1 = document.querySelector('.logo-heading');
-const nav = document.querySelector('nav');
+const nav = document.querySelector('.nav');
 const theBody = document.querySelector('body');
 const theHTML = document.querySelector('html');
 const img = document.querySelectorAll('img');
@@ -94,10 +94,6 @@ for (let i = 0; i < img.length; i++) {
   });
 };
 
-nav.addEventListener("click", () => {
-    stopReload.stopPropagation();
-  });
-
 
 anchors.forEach(a => {
   a.addEventListener("click", stopReload => {
@@ -105,8 +101,11 @@ anchors.forEach(a => {
   });
 });
 
-anchors.forEach(a => {
-  a.addEventListener("dblclick", stopReload => {
-    stopReload.style.display = 'none';
+nav.addEventListener("mouseover", (stuff) => {
+    stuff.stopPropagation();
   });
-});
+
+
+nav.addEventListener("mouseover", () => {
+    nav.style.color = 'green';
+  });
