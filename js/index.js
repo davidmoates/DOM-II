@@ -1,5 +1,6 @@
 // Selectors
 const funBusH1 = document.querySelector('.logo-heading');
+const nav = document.querySelector('nav');
 const theBody = document.querySelector('body');
 const theHTML = document.querySelector('html');
 const img = document.querySelectorAll('img');
@@ -66,15 +67,15 @@ theHTML.addEventListener('resize', () => {
   console.log(`${window.innerHeight} + ${window.innerWidth}`)
 });
 
-for (let i = 0; i < h2And4Tag.length; i++) {
-  h2And4Tag[i].addEventListener('mousemove', () => {
+h2And4Tag.forEach( h => {
+  h.addEventListener('mousemove', () => {
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
     const pColor = 'rgb(' + r + ',' + g + ',' + b + ')';
-    h2And4Tag[i].style.color = pColor;
+    h.style.color = pColor;
   });
-};
+})
 
 
 for (let i = 0; i < pTag.length; i++) {
@@ -92,3 +93,20 @@ for (let i = 0; i < img.length; i++) {
     img[i].style.display = 'none';
   });
 };
+
+nav.addEventListener("click", () => {
+    stopReload.stopPropagation();
+  });
+
+
+anchors.forEach(a => {
+  a.addEventListener("click", stopReload => {
+    stopReload.preventDefault();
+  });
+});
+
+anchors.forEach(a => {
+  a.addEventListener("dblclick", stopReload => {
+    stopReload.style.display = 'none';
+  });
+});
