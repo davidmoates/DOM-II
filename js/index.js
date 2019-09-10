@@ -87,6 +87,15 @@ for (let i = 0; i < pTag.length; i++) {
   });
 };
 
+// pTag.forEach(w => {
+//   w.addEventListener('select', (highlight) => {
+//     w.setAttribute("class", "log");
+//     const log = document.getElementById('log');
+//     const selection = highlight.target.value.substring(highlight.target.selectionStart, highlight.target.selectionEnd);
+//     console.log(`${log.textContent = `${selection}`}`)
+//   });
+// });
+
 
 for (let i = 0; i < img.length; i++) {
   img[i].addEventListener('dblclick', () => {
