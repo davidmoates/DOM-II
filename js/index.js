@@ -118,3 +118,28 @@ nav.addEventListener("mouseover", (stuff) => {
 nav.addEventListener("mouseover", () => {
     nav.style.color = 'green';
   });
+
+
+  // const funBusH1 = document.querySelector('.logo-heading');
+  // const nav = document.querySelector('.nav');
+  // const theBody = document.querySelector('body');
+  // const theHTML = document.querySelector('html');
+  // const img = document.querySelectorAll('img');
+  // const buttons = document.querySelectorAll('.destination .btn');
+  // const anchors = document.querySelectorAll('nav a');
+  // const h2And4Tag = document.querySelectorAll('h2, h4');
+  // const pTag = document.querySelectorAll('p')
+
+  // Here are my ten new Event Listeners
+
+const headerP = document.querySelector('.intro p');
+
+headerP.addEventListener('mouseover', () => {
+  if(headerP.style.color === 'black') {
+    headerP.style.color = 'blue';
+  }else {
+    headerP.style.color = 'black';
+  }
+});
+
+const
