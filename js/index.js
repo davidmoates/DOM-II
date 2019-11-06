@@ -72,8 +72,8 @@ h2And4Tag.forEach( h => {
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
-    const pColor = 'rgb(' + r + ',' + g + ',' + b + ')';
-    h.style.color = pColor;
+    const randomColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+    h.style.color = randomColor;
   });
 })
 
@@ -118,3 +118,91 @@ nav.addEventListener("mouseover", (stuff) => {
 nav.addEventListener("mouseover", () => {
     nav.style.color = 'green';
   });
+
+
+  // const funBusH1 = document.querySelector('.logo-heading');
+  // const nav = document.querySelector('.nav');
+  // const theBody = document.querySelector('body');
+  // const theHTML = document.querySelector('html');
+  // const img = document.querySelectorAll('img');
+  // const buttons = document.querySelectorAll('.destination .btn');
+  // const anchors = document.querySelectorAll('nav a');
+  // const h2And4Tag = document.querySelectorAll('h2, h4');
+  // const pTag = document.querySelectorAll('p')
+
+  // Here are my ten new Event Listeners
+
+const headerP = document.querySelector('.intro p');
+
+headerP.addEventListener('mouseover', () => {
+  if(headerP.style.color === 'black') {
+    headerP.style.color = 'blue';
+  }else {
+    headerP.style.color = 'black';
+  }
+});
+
+const letsGoFirstP = document.querySelectorAll('.text-content p')[0];
+
+letsGoFirstP.addEventListener('click', () => {
+  letsGoFirstP.style.background = 'black';
+});
+
+letsGoFirstP.addEventListener('dblclick', () => {
+  letsGoFirstP.style.color = 'white';
+});
+
+const letsGoSecondP = document.querySelectorAll('.text-content p')[1];
+
+letsGoSecondP.addEventListener('mousemove', () => {
+  if(letsGoSecondP.style.background === 'white') {
+    letsGoSecondP.style.background = 'black';
+  }else {
+    letsGoSecondP.style.background = 'white';
+  }
+});
+
+letsGoSecondP.addEventListener('wheel', () => {
+  if(letsGoSecondP.style.color === 'black') {
+    letsGoSecondP.style.color = 'white';
+  }else {
+    letsGoSecondP.style.color = 'black';
+  }
+});
+
+const mainNav = document.querySelector('header');
+
+window.addEventListener('resize', () => {
+  if(mainNav.style.display === 'none') {
+    mainNav.style.display = 'block';
+  }else {
+    mainNav.style.display = 'none';
+    mainNav.style.background = 'blue';
+  }
+});
+
+mainNav.addEventListener('keydown', () => {
+  if(mainNav.style.background === 'blue') {
+    mainNav.style.background = 'white';
+  }else {
+    mainNav.style.background = 'blue';
+  }
+});
+
+for(let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('mousedown', () => {
+    alert('WHY DID YOU CLICK THAT!!!!');
+  });
+};
+
+for (let i = 0; i < img.length; i++) {
+  img[i].addEventListener('mouseout', () => {
+    mainNav.style.display = 'none';
+  });
+};
+
+for (let i = 0; i < img.length; i++) {
+  img[i].addEventListener('keyup', () => {
+    mainNav.style.display = 'block';
+  });
+};
